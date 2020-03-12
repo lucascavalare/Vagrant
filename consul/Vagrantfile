@@ -33,7 +33,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   net_ips = num_nodes.times.collect { |n| base_ip + "#{n+11}" }
 
   config.vm.define "consul-server" do |consul|
-    consul.vm.box = "ubuntu/trusty64"
+    consul.vm.box = "bento/ubuntu-18.04"
     consul.vm.hostname = "consul-server"
     consul.vm.network :private_network, ip: "192.168.33.10"
     consul.vm.provider "virtualbox" do |vb|
@@ -44,7 +44,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   num_nodes.times do |n|
     config.vm.define "net-#{n+1}" do |net|
-      net.vm.box = "ubuntu/vivid64"
+      net.vm.box = "bento/ubuntu-18.10"
       net_ip = net_ips[n]
       net_index = n+1
       #net.vm.hostname = "net-#{net_index}"

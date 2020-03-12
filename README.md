@@ -7,4 +7,6 @@
 **Flannel**
   - Creating an Overkay Newtwork for containers. 
   - Containers on different hosts can do communicate with each other without port mapping. 
-     
+
+**Consul**
+  - Docker Network relies on Consul for Key-Value stores. 

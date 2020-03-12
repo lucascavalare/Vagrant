@@ -7,7 +7,8 @@ VAGRANTFILE_API_VERSION = "2"
 $consul=<<SCRIPT
 apt-get update
 apt-get -y install wget
-wget -qO- https://experimental.docker.com/ | sh
+#wget -qO- https://experimental.docker.com/ | sh
+curl -sSL https://get.docker.com | sh
 gpasswd -a vagrant docker
 service docker restart
 docker run -d -p 8500:8500 -p 8300-8302:8300-8302/tcp -p 8300-8302:8300-8302/udp -h consul progrium/consul -server -bootstrap
@@ -17,7 +18,8 @@ $bootstrap=<<SCRIPT
 apt-get update
 apt-get -y install wget curl
 apt-get -y install bridge-utils
-wget -qO- https://experimental.docker.com/ | sh
+#wget -qO- https://experimental.docker.com/ | sh
+curl -sSL https://get.docker.com | sh
 gpasswd -a vagrant docker
 echo DOCKER_OPTS=\\"--cluster-store=consul://192.168.33.10:8500 --cluster-advertise=${1}:0\\" >> /etc/default/docker
 cp /vagrant/docker.service /etc/systemd/system/

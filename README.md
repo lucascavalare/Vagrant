@@ -10,3 +10,4 @@
 
 **Consul**
   - Docker Network relies on Consul for Key-Value stores. 
+  - Use Docker Network feature and a `VXLAN` Overlay. 

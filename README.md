@@ -5,7 +5,7 @@
   - GRE to encapsulate IPv4 traffic and provide route between containers using their private addresses.
       
 **Flannel**
-  - Creating an Overkay Newtwork for containers. 
+  - Creating an Overlay Newtwork for containers. 
   - Containers on different hosts can do communicate with each other without port mapping. 
 
 **Consul**
